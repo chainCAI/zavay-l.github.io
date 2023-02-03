@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/assets/favicon-16x16.png?v=2.8.0" type="image/png" sizes="16x16"><link rel="icon" href="/assets/favicon-32x32.png?v=2.8.0" type="image/png" sizes="32x32"><link rel="apple-touch-icon" href="/assets/mstile-150x150.png?v=2.8.0" sizes="180x180"><link rel="mask-icon" href="/%5Bobject%20Object%5D?v=2.8.0" color="#54bcff"><meta name="msapplication-TileImage" content="/%5Bobject%20Object%5D"><meta name="msapplication-TileColor" content="#000000"><meta name="description" content="数据库的基本概念、安装与配置、数据模型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库准备">
+<meta property="og:url" content="http://example.com/2023/02/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A6%82%E5%BF%B5/index.html">
+<meta property="og:site_name" content="Zachary的小站">
+<meta property="og:description" content="数据库的基本概念、安装与配置、数据模型">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/jpeg/26415890/1651674322282-ce63cd01-833a-4215-92b0-b1b04e8b2254.jpeg">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/jpeg/26415890/1651676573098-707e36b8-23eb-4e85-899a-bbc2a68d6e8a.jpeg">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26415890/1651676714989-f0d17d3d-4a4d-4024-949d-f60e155b0b02.png#clientId=u70bd3738-7e79-4&from=paste&height=51&id=u7d73d4fb&name=image.png&originHeight=61&originWidth=190&originalType=binary&ratio=1&rotation=0&showTitle=false&size=1764&status=done&style=none&taskId=u47db257c-f6a3-47a0-bde9-8186552c952&title=&width=160">
+<meta property="article:published_time" content="2023-02-03T04:09:14.377Z">
+<meta property="article:modified_time" content="2023-02-03T04:18:14.912Z">
+<meta property="article:author" content="Zachary">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2022/jpeg/26415890/1651674322282-ce63cd01-833a-4215-92b0-b1b04e8b2254.jpeg"><title>数据库准备 | Zachary的小站</title><link ref="canonical" href="http://example.com/2023/02/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A6%82%E5%BF%B5/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.8.0"><link rel="stylesheet" href="css/custom.css"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":"ture"},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-user"></i></span><span class="header-nav-menu-item__text">关于</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">2023新年快乐</div><div class="header-banner-info__subtitle">Happy</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">数据库准备</h1><div class="post-meta"><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2023-02-03</span></span></div></header><div class="post-body">
+        <h2 id="数据库"   >
+          <a href="#数据库" class="heading-link"><i class="fas fa-link"></i></a><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2>
+      <ul>
+<li><p>存储数据的仓库 , 数据是有组织的进行存储 . </p>
+</li>
+<li><p>DataBase 简称DB</p>
+
+        <h2 id="数据库管理系统"   >
+          <a href="#数据库管理系统" class="heading-link"><i class="fas fa-link"></i></a><a href="#数据库管理系统" class="headerlink" title="数据库管理系统"></a>数据库管理系统</h2>
+      </li>
+<li><p>管理数据库的大型软件</p>
+</li>
+<li><p>DataBase Management System 简称DBMS</p>
+
+        <h2 id="SQL"   >
+          <a href="#SQL" class="heading-link"><i class="fas fa-link"></i></a><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h2>
+      </li>
+<li><p>Structured Query Language    简称SQL 结构化查询语言</p>
+</li>
+<li><p>操作关系型数据库的编程语言</p>
+</li>
+<li><p>定义操作所有关系型数据库的统一标准</p>
+</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/jpeg/26415890/1651674322282-ce63cd01-833a-4215-92b0-b1b04e8b2254.jpeg"></p>
+
+        <h2 id="常见的关系型数据库管理系统"   >
+          <a href="#常见的关系型数据库管理系统" class="heading-link"><i class="fas fa-link"></i></a><a href="#常见的关系型数据库管理系统" class="headerlink" title="常见的关系型数据库管理系统"></a>常见的关系型数据库管理系统</h2>
+      <ul>
+<li>Oracle：收费的大型数据库，Oracle 公司的产品</li>
+<li>==<strong>MySQL</strong>==： 开源免费的中小型数据库。后来 Sun公司收购了 MySQL，而 Sun 公司又被 Oracle 收购</li>
+<li>SQL Server：MicroSoft 公司收费的中型的数据库。C#、.net 等语言常使用</li>
+<li>PostgreSQL：开源免费中小型的数据库</li>
+<li>DB2：IBM 公司的大型收费数据库产品</li>
+<li>SQLite：嵌入式的微型数据库。如：作为 Android 内置数据库</li>
+<li>MariaDB：开源免费中小型的数据库</li>
+</ul>
+
+        <h2 id="下载"   >
+          <a href="#下载" class="heading-link"><i class="fas fa-link"></i></a><a href="#下载" class="headerlink" title="下载"></a>下载</h2>
+      <p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://downloads.mysql.com/archives/community/" >https://downloads.mysql.com/archives/community/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>我下载64位绿色解压免安装版本</p>
+
+        <h2 id="安装配置"   >
+          <a href="#安装配置" class="heading-link"><i class="fas fa-link"></i></a><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h2>
+      <p>解压后将软件文件目录放入exe专属软件安装路径<br><strong>1.开始配置环境</strong><br>配置环境变量<br><code>MYSQL_HOME        D:\exe\mysql-5.7.24-winx64</code><br><code>Path            %MYSQL_HOME%\bin</code><br><strong>2.新建配置文件 my.ini 到MySQL安装路径下</strong></p>
+<figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[mysql]</span><br><span class="line"><span class="keyword">default</span><span class="operator">-</span><span class="type">character</span><span class="operator">-</span><span class="keyword">set</span><span class="operator">=</span>utf8</span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line"><span class="type">character</span><span class="operator">-</span><span class="keyword">set</span><span class="operator">-</span>server<span class="operator">=</span>utf8</span><br><span class="line"><span class="keyword">default</span><span class="operator">-</span>storage<span class="operator">-</span>engine<span class="operator">=</span>INNODB</span><br><span class="line">sql_mode<span class="operator">=</span>STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION</span><br></pre></td></tr></table></div></figure>
+<p><strong>3.打开管理员权限的命令提示符</strong><br><strong>4.初始化MySQL</strong><br><code>mysqld --initialize-insecure</code><br>就会在MySQL安装路径下生成一个data文件夹及其内容<br><strong>5.注册MySQL服务</strong><br><code>mysqld -install</code><br>可以查看后台服务<code>services.msc</code>会发现存在MySQL的服务已经建立<br><strong>6.启动MYSQL服务</strong><br><code>net start mysql</code>//启动MySQL服务<br><code>net stop mysql</code> //停止MySQL服务<br>在启动MySQL服务的时候 我出现了问题 发生系统错误2 系统找不到指定的文件<br>解决方法: 将命令路径cd到MySQL安装路径的bin目录下 再使用命令<br><strong>7.修改默认账户 密码</strong><br><code>mysqladmin -u root password 1234</code><br>mysql管理员 -管理者 root(用户名) 密码 1234</p>
+
+        <h1 id="使用"   >
+          <a href="#使用" class="heading-link"><i class="fas fa-link"></i></a><a href="#使用" class="headerlink" title="使用"></a>使用</h1>
+      <p><strong>登录和登出</strong><br><code>mysql -uroot -p1234</code>//登录<br>登录参数<br><code>mysql -u用户名 -p密码 -h要连接的mysql服务器的ip地址(默认127.0.0.1) -P端口号(默认3306)</code><br>退出<br><code>exit</code><br><code>quit</code></p>
+
+        <h2 id="关系型数据库"   >
+          <a href="#关系型数据库" class="heading-link"><i class="fas fa-link"></i></a><a href="#关系型数据库" class="headerlink" title="关系型数据库"></a>关系型数据库</h2>
+      <p>关系型数据库是建立在关系模型基础上的数据库，简单说，关系型数据库是由多张能互相连接的 <strong>二维表</strong> 组成的数据库<br>展示出来是一种表格的形式</p>
+<p>最最简单的例子</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>订单信息</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>订单编号</td>
+<td>负责人</td>
+<td>日期</td>
+</tr>
+<tr>
+<td>34535</td>
+<td>露露</td>
+<td>2022年5月3日</td>
+</tr>
+<tr>
+<td>24235</td>
+<td>天天</td>
+<td>2022年5月4日</td>
+</tr>
+<tr>
+<td>54654</td>
+<td>苗苗</td>
+<td>2022年5月4日</td>
+</tr>
+<tr>
+<td>37564</td>
+<td>海海</td>
+<td>2022年5月4日</td>
+</tr>
+<tr>
+<td>12342</td>
+<td>达达</td>
+<td>2022年5月4日</td>
+</tr>
+</tbody></table></div>
+
+        <h3 id="关系型数据库的优点"   >
+          <a href="#关系型数据库的优点" class="heading-link"><i class="fas fa-link"></i></a><a href="#关系型数据库的优点" class="headerlink" title="关系型数据库的优点"></a>关系型数据库的优点</h3>
+      <ul>
+<li>都是使用<strong>表结构</strong>，格式一致，易于维护。</li>
+<li>使用<strong>通用的 SQL 语言</strong>操作，使用方便，可用于复杂查询。<ul>
+<li>关系型数据库都可以通过SQL进行操作，所以使用方便。</li>
+<li>复杂查询。现在需要查询001号订单数据，我们可以看到该订单是1号客户的订单，而1号订单是李聪这个客户。以后也可以在一张表中进行统计分析等操作。</li>
+</ul>
+</li>
+<li>数据存储在<strong>磁盘</strong>中，<strong>安全</strong>。</li>
+</ul>
+
+        <h2 id="数据模型"   >
+          <a href="#数据模型" class="heading-link"><i class="fas fa-link"></i></a><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h2>
+      <p><img src="https://cdn.nlark.com/yuque/0/2022/jpeg/26415890/1651676573098-707e36b8-23eb-4e85-899a-bbc2a68d6e8a.jpeg"><br>通过客户端可以通过数据库管理系统创建数据库，在数据库中创建表，在表中添加数据。<br>创建的每一个数据库对应到磁盘上都是一个文件夹。create database db1;<br><img src="https://cdn.nlark.com/yuque/0/2022/png/26415890/1651676714989-f0d17d3d-4a4d-4024-949d-f60e155b0b02.png#clientId=u70bd3738-7e79-4&from=paste&height=51&id=u7d73d4fb&name=image.png&originHeight=61&originWidth=190&originalType=binary&ratio=1&rotation=0&showTitle=false&size=1764&status=done&style=none&taskId=u47db257c-f6a3-47a0-bde9-8186552c952&title=&width=160" alt="image.png"><br>db.frm 是表文件<br>db.MYD 是数据文件<br>通过这两个文件就可以查询到数据展示成二维表的效果。</p>
+
+        <h2 id="总和"   >
+          <a href="#总和" class="heading-link"><i class="fas fa-link"></i></a><a href="#总和" class="headerlink" title="总和"></a>总和</h2>
+      <ul>
+<li>MySQL中可以创建多个数据库，每个数据库对应到磁盘上的一个文件夹</li>
+<li>在每个数据库中可以创建多个表，每张都对应到磁盘上一个 frm 文件</li>
+<li>每张表可以存储多条数据，数据会被存储到磁盘中 MYD 文件中</li>
+</ul>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2023/02/03/SQL%E6%A6%82%E8%BF%B0%E4%BA%86%E8%A7%A3/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">SQL掌握</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2023/02/03/Mai/"><span class="paginator-prev__text">Java Mail现实后端验证码登录接口</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.</span> <span class="toc-text">
+          数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.</span> <span class="toc-text">
+          数据库管理系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL"><span class="toc-number">3.</span> <span class="toc-text">
+          SQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="toc-number">4.</span> <span class="toc-text">
+          常见的关系型数据库管理系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD"><span class="toc-number">5.</span> <span class="toc-text">
+          下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE"><span class="toc-number">6.</span> <span class="toc-text">
+          安装配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-number"></span> <span class="toc-text">
+          使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.</span> <span class="toc-text">
+          关系型数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-number">1.1.</span> <span class="toc-text">
+          关系型数据库的优点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">
+          数据模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E5%92%8C"><span class="toc-number">3.</span> <span class="toc-text">
+          总和</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/assets/tx.png" alt="avatar"></div><p class="sidebar-ov-author__text">周刚的分享</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="tencent://message?uin=2462148816" target="_blank" rel="noopener" data-popover="QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a><a class="sidebar-ov-social-item" href="https://space.bilibili.com/434160161" target="_blank" rel="noopener" data-popover="哔哩哔哩" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">bilibili</span></a><a class="sidebar-ov-social-item" href="https://blog.csdn.net/zavay" target="_blank" rel="noopener" data-popover="CSDN" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">csdn</span></a><a class="sidebar-ov-social-item" href="https://plus.google.com/" target="_blank" rel="noopener" data-popover="Google" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-google"></i></span></a><a class="sidebar-ov-social-item" href="https://twitter.com/" target="_blank" rel="noopener" data-popover="Twitter" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-check-to-slot"></i></span></a><a class="sidebar-ov-social-item" href="https://youtube.com/" target="_blank" rel="noopener" data-popover="Youtube" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-youtube"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">20</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">9</div><div class="sidebar-ov-state-item__name">分类</div></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021~2023</span><span class="footer__devider"></span><span>Zachary</span></div><div>道阻且长，行则将至，行而不辍，则未来可期。</div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-tree"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.8.0"></script><script src="/js/stun-boot.js?v=2.8.0"></script><script src="/js/scroll.js?v=2.8.0"></script><script src="/js/header.js?v=2.8.0"></script><script src="/js/sidebar.js?v=2.8.0"></script></body></html>
